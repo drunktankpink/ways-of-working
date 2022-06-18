@@ -43,20 +43,20 @@ Again, these are suggestions that be adapted for indiviual use cases. For exampl
 | AWS Resource | Naming Convention | Comment | Example |
 | ------------ | ----------------- | ------- | ------- |
 | VPC | {{account_naming_prefix}}-<region>-<aws_resource>  |  |  |
-| Subnets | {{account_naming_prefix}}-{{subnet_type}}-<region>-<availability_zone>-<aws_resource>   | `{{subnet_type}}` should describe the purpose of the subnet. For example, it could be one of: <ul><li>public</li><li>private</li><li>app</li><li>data</li></ul>  |  |
-| Route Tables | {{account_naming_prefix}}-{{route_type}}-<region>-<availability_zone>-<aws_resource>   | `{{route_type}}` should be one of: <ul><li>public</li><li>private</li></ul>  |  |
-| Natwork ACL | {{account_naming_prefix}}-{{nacl_type}}-<region>-<aws_resource>  | `{{nacl_type}}` should describe the NACL. It should be one of <ul><li>public</li><li>private</li></ul> |  |
+| Subnets | {{account_naming_prefix}}-<availability_zone>-{{subnet_type}}-<aws_resource>   | `{{subnet_type}}` should describe the purpose of the subnet. For example, it could be one of: <ul><li>public</li><li>private</li><li>app</li><li>data</li></ul>  |  |
+| Route Tables | {{account_naming_prefix}}-<region>-{{route_type}}-<aws_resource>   | `{{route_type}}` should describe the purpose. It could be one of: <ul><li>public</li><li>private</li></ul>  |  |
+| Natwork ACL | {{account_naming_prefix}}-<region>-{{nacl_type}}-<aws_resource>  | `{{nacl_type}}` should describe the NACL. It could be one of <ul><li>public</li><li>private</li></ul> |  |
 | Transit Gateway | {{account_naming_prefix}}-<region>-<aws_resource>   |  | dmpc-network-euw1-tgw  |
-| Transit Gateway Attachment | {{account_naming_prefix}}-<aws_resource>  |  |  |
-| NAT Gateway | {{account_naming_prefix}}--<aws_resource>  |  |  |
-| Endpoint | {{account_naming_prefix}}-{{endpoint_type}}-<aws_resource>  | `{{endpoint_type}}` should describe the type of endpoint: <ul><li>ec2</li><li>ecr</li><li>ecs</li><li>s3</li><li>ssm</li></ul> |  |
+| Transit Gateway Attachment | {{account_naming_prefix}}-<aws_resource>  |  | dmpc-network-euw1-tga |
+| NAT Gateway | {{account_naming_prefix}}-<region>-<aws_resource>  |  | dmpc-network-euw1-ngw  |
+| Endpoint | {{account_naming_prefix}}-<region>-{{endpoint_type}}-<aws_resource>  | `{{endpoint_type}}` should describe the type of endpoint: <ul><li>ec2</li><li>ecr</li><li>ecs</li><li>s3</li><li>ssm</li></ul> |  |
 
 ### IAM Resources
 | AWS Resource | Naming Convention | Comment | Example |
 | ------------ | ----------------- | ------- | ------- |
 | IAM User | Users: <ul><li>{{username}}</li></ul> <br> Service Accounts: <ul><li>{{account_naming_prefix}}-{{service_name}}-<aws_resource></li></ul> <br> Third Party Accounts: <ul><li>{{account_naming_prefix}}-{{client}}-{{identifier}}-<aws_resource></li></ul> | **Users:** <br> `{{username}}` can vary based upon how you authenticate users within AWS. <br> You could adopt the first part of email addresses, or import users from third party access management tools, such as Okta or Active Directory <br><br> **Service Accounts:** <br> `{{service_name}}` should describe the service, for example: <ui><li>terraform</li><li>n2ws-backup</li></ul> <br> **Third Party Accounts:** <br> `{{client}}` & `{{identifier}}` should be used to clearly define the user. For example: <ui><li></li></ul>  | User: <ui><li>mscott</li><li>tyrell.wellick</li></ul> <br> Service Account: <ui><li></li></ul> <br> Third Party Accounts:  |
-| IAM Role |   |  | User: <ui><li></li></ul> <br> |
-| IAM Group |  |  |  |
+| IAM Role | {{account_naming_prefix}}-{{role_purpose}}-<aws_resource> <br> {{team_naming_prefix}}-{{role_purpose}}-<aws_resource> | `{{role_purpose}}` should explain what the role is for: <ui><li>vpc-flow-logs</li><li>atlantis-deployment</li><li>devops-admin</li></ul> | User: <ui><li></li></ul> <br> |
+| IAM Group | {{account_naming_prefix}}-{{group_purpose}} | `{{group_purpose}}` should describe the group: <ul><li>administrators</li><li>management</li><li>billing</li></ul> |  |
 | IAM Policy |  |  |  |
 | KMS |  |  |  |
 | SSL Certificate |  |  |  |
