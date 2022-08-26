@@ -6,6 +6,8 @@ This site is authored with MKDocs
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 Please see below for useful commands
 
+In addition, this website makes use of the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
+
 ### Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
