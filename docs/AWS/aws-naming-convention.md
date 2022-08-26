@@ -1,6 +1,6 @@
 # Naming Conventions
 
-The purpose of this document is not for it to be adhered to by the letter, but to act as a guide which can be used to support the process of definiing naming conventions as well as highlight the reason why you should set and follow them.
+The purpose of this document is not for it to be adhered to by the letter, but to act as a guide which can be used to support the process of defining naming conventions as well as highlight the reason why you should set and follow them.
 
 
 ## Placeholders
@@ -8,10 +8,10 @@ The following placeholders can be used to define a consistent naming convention.
 | Placeholder            | Description                                      | Value | Short Value |
 | ------------           | ------------ | ------------ | ------------ |
 | \<org_name>            | Organisation that owns the resources             | Capgemini <br> Dunder Mifflin Paper Company <br> Genco Pura Olive Oil Company | cg <br> dmpc <br> genco |
-| \<aws_account>         | AWS Account containing the resources <br> As the name of an account must be a single word, I would recomend setting a value that combines \<org_name> & \<environment>            | Capgemini Production Account <br> Dunder Mifflin Paper Company Network Account <br> Genco Pura Olive Oil Company Development Account  | cg-prod <br> dmpc-network <br> genco-dev   |
+| \<aws_account>         | AWS Account containing the resources <br> As the name of an account must be a single word, I would recommend setting a value that combines \<org_name> & \<environment>            | Capgemini Production Account <br> Dunder Mifflin Paper Company Network Account <br> Genco Pura Olive Oil Company Development Account  | cg-prod <br> dmpc-network <br> genco-dev   |
 | \<region>              | AWS Region used                                  | eu-west-1 <br> eu-west-2  | euw1 <br> euw2  |
 | \<availability_zone>   | AWS Availability Zone                            | eu-west-2a <br> eu-west-2b <br> eu-west-2c  | euw2a <br> euw2b <br> euw2c |
-| \<aws_resource>        | AWS Resource abbreviation                        | Virtual Private Cloud <br> Subnet <br> Route Table <br> Networl ACL <br> Transfer Gateway <br> Security Group <br> EC2 Instance <br> Auto Scaling Group <br> ECS Cluster <br> ECS Task <br> EKS Cluster <br> S3 Bucket <br> KMS Key <br> KMS Policy <br> IAM Role <br> IAM Policy  | vpc <br> subnet <br> rtb <br> nacl <br> tgw <br> sg <br> ec2 <br> asg <br> ecs-cluster <br> ecs-task <br> eks-cluster <br> s3 <br> kms <br> kms-policy <br> iam-role <br> iam-policy |
+| \<aws_resource>        | AWS Resource abbreviation                        | Virtual Private Cloud <br> Subnet <br> Route Table <br> Network ACL <br> Transfer Gateway <br> Security Group <br> EC2 Instance <br> Auto Scaling Group <br> ECS Cluster <br> ECS Task <br> EKS Cluster <br> S3 Bucket <br> KMS Key <br> KMS Policy <br> IAM Role <br> IAM Policy  | vpc <br> subnet <br> rtb <br> nacl <br> tgw <br> sg <br> ec2 <br> asg <br> ecs-cluster <br> ecs-task <br> eks-cluster <br> s3 <br> kms <br> kms-policy <br> iam-role <br> iam-policy |
 | \<environment>         | The environment being used for the resources     | Development <br> Test <br> Staging <br> UAT <br> Production <br> Shared Services <br> Sandbox <br> | dev <br> test <br> staging <br> uat <br> prod <br> shared <br> sandbox |
 | \<business_unit>       | The business unit of the provisioned resources   |   |   |
 | \<team>                | The team owning the provisioned resources        |   |   |
@@ -31,7 +31,7 @@ Prefixes can also be specified for application level resources, which are specif
 ## AWS Examples
 
 Below are examples which can be used as inspiration. <br>
-Again, these are suggestions that be adapted for indiviual use cases. For example, depending on your landing zone set up, if you only deploy into one region, you could choose to omit `<region>` from the naming convention.
+Again, these are suggestions that be adapted for individual use cases. For example, depending on your landing zone set up, if you only deploy into one region, you could choose to omit `<region>` from the naming convention.
 
 ### AWS Accounts
 
@@ -45,7 +45,7 @@ Again, these are suggestions that be adapted for indiviual use cases. For exampl
 | VPC | {{account_naming_prefix}}-<region>-<aws_resource>  |  |  |
 | Subnets | {{account_naming_prefix}}-<availability_zone>-{{subnet_type}}-<aws_resource>   | `{{subnet_type}}` should describe the purpose of the subnet. For example, it could be one of: <ul><li>public</li><li>private</li><li>app</li><li>data</li></ul>  |  |
 | Route Tables | {{account_naming_prefix}}-<region>-{{route_type}}-<aws_resource>   | `{{route_type}}` should describe the purpose. It could be one of: <ul><li>public</li><li>private</li></ul>  |  |
-| Natwork ACL | {{account_naming_prefix}}-<region>-{{nacl_type}}-<aws_resource>  | `{{nacl_type}}` should describe the NACL. It could be one of <ul><li>public</li><li>private</li></ul> |  |
+| Network ACL | {{account_naming_prefix}}-<region>-{{nacl_type}}-<aws_resource>  | `{{nacl_type}}` should describe the NACL. It could be one of <ul><li>public</li><li>private</li></ul> |  |
 | Transit Gateway | {{account_naming_prefix}}-<region>-<aws_resource>   |  | dmpc-network-euw1-tgw  |
 | Transit Gateway Attachment | {{account_naming_prefix}}-<aws_resource>  |  | dmpc-network-euw1-tga |
 | NAT Gateway | {{account_naming_prefix}}-<region>-<aws_resource>  |  | dmpc-network-euw1-ngw  |
