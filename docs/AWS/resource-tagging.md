@@ -46,11 +46,12 @@ The following categories and tags are not exhaustive. But serve to give an idea 
 
 | Technical | Automation | Business | Security |
 | --------- | ---------- | -------- | -------- |
-| <ui><li>**Name -** Identify resources with a unique name</li><li>**Application ID -** Identify resources that belong to a specific application</li><li>**Application role / service -** Describe the function of of a particular resource (web server, bastion, database, message broker)</li><li>**Cluster -** Identify resource groups that share a common configuration & perform a specific function for an application</li><li>**Environment -** Distinguish between development, test & production environments</li><li>**Version -** Distinguish between versions of applications or resources</li></ul> | <ui><li>**Date/Time -** Identify the date or time a resources should be started, stopped, deleted or rotated</li><li>**Opt in/Opt out -** Indicate whether a resource should be included in an automated activity such as starting, stopping or resizing instances</li><li>**Security -** Determine requires such as encryption or enabling of Amazon VPC flow logs; identify resources that need extra security (security groups or route tables)</li></ul> | <ui><li>**Project -** Identify the project that the resources support</li><li>**Owner -** Identify who is responsible for resource</li><li>**Cost Center/Business Unit -** Identify the cost center or business unit associated with a resource, typically for cost allocation</li><li>**Customer -** Identify a client that resources serve</li></ul> | <ui><li>**Confidentiality -** Identify specific data confidentiality levels for a resource</li><li>**Compliance -** Identify if resources need to adhere to specific compliance requirements</li></ul> |
+| **Name -** Identify resources with a unique name <br><br> **Application ID -** Identify resources that belong to a specific application <br><br> **Application role / service -** Describe the function of of a particular resource (web server, bastion, database, message broker) <br><br> **Cluster -** Identify resource groups that share a common configuration & perform a specific function for an application <br><br> **Environment -** Distinguish between development, test & production environments <br><br> **Version -** Distinguish between versions of applications or resources | **Date/Time -** Identify the date or time a resources should be started, stopped, deleted or rotated <br><br> **Opt in/Opt out -** Indicate whether a resource should be included in an automated activity such as starting, stopping or resizing instances <br><br> **Security -** Determine requires such as encryption or enabling of Amazon VPC flow logs; identify resources that need extra security (security groups or route tables) | **Project -** Identify the project that the resources support <br><br> **Owner -** Identify who is responsible for resource <br><br> **Cost Center/Business Unit -** Identify the cost center or business unit associated with a resource, typically for cost allocation <br><br> **Customer -** Identify a client that resources serve | **Confidentiality -** Identify specific data confidentiality levels for a resource <br><br> **Compliance -** Identify if resources need to adhere to specific compliance requirements |
 
 
-Tags can be added manually to any resource, however it is best practice to define mandatory tags within common templates (AWS CloudFormation) or shared modules (Terraform). This ensures consistency in adhering to the agreed tagging strategy.
-In addition to this, policies can be set within landing zones to ensure resources are provisioned with required tags
+!!! note
+    Tags can be added manually to any resource, however it is best practice to define mandatory tags within common templates (AWS CloudFormation) or shared modules (Terraform). This ensures consistency in adhering to the agreed tagging strategy.
+    In addition to this, policies can be set within landing zones to ensure resources are provisioned with required tags
 
 ---
 
@@ -94,9 +95,10 @@ Tags can be used in conjunction with IAM Policies. Tag-based conditions can be u
 ---
 
 ## Mandatory Tags
-define mandatory tags which are to be applied to all resources.
+Define mandatory tags which are to be applied to all resources.
 
 | Tag | Format | Example | Description |
+| --- | ------ | ------- | ----------- |
 | application_role/service_name | lowercase alphanumerical | "backupdb" or "bastion" | Describe the service of the resource in question |
 | cost_centre | numerical | "384786" | The cost centre for the resources |
 | environment | lowercase alphanumerical | "prod" , "test", "dev", "uat" or "sandbox" | Follow environment naming standards |
@@ -106,13 +108,19 @@ define mandatory tags which are to be applied to all resources.
 | name | programmatic | publiccloud-prod-backup-01 | Depending on your naming convention, this should ideally be handled by your IaC deployment |
 
 
-service_name - Allow for grouping of resources by service, across environments or projects.
-cost_centre - Breakdown costs by business unit or cost centre. 
-environment - Identify the environment. Can be used in conjunction with conditions within IAM policies to restrict access (to production for example). Can also be used with VPC networks. 
-owner - Assist with service ownership and accountability of resources.
-project_id - SOmetimes a single cost code can have multiple projects associated. Therefore an additional project ID tag can be used.
-id - can be used to identify multiple resources of the same name 01 & 02
-name - The resource name. This should follow a pre-defined naming convention and handles via IaC tooling
+**service_name** - Allow for grouping of resources by service, across environments or projects.
+
+**cost_centre** - Breakdown costs by business unit or cost centre. 
+
+**environment** - Identify the environment. Can be used in conjunction with conditions within IAM policies to restrict access (to production for example). Can also be used with VPC networks. 
+
+**owner** - Assist with service ownership and accountability of resources.
+
+**project_id** - SOmetimes a single cost code can have multiple projects associated. Therefore an additional project ID tag can be used.
+
+**id** - can be used to identify multiple resources of the same name 01 & 02
+
+**name** - The resource name. This should follow a pre-defined naming convention and handles via IaC tooling
 
 ---
 
@@ -123,7 +131,10 @@ For any tagging strategy to be effective, you need to apply it consistently and 
 - **Reactive -** find resources that are not correctly tagged.
 - **Proactive -** ensure standardised tags are consistently applied at resource creation. 
 
+<br> 
+
 The following tools can be used to assist with tagging governance:
+
 - Resource Groups Tagging API
 - AWS Config Rules
 - Custom Scripts
@@ -138,9 +149,14 @@ A stronger approach can also be adopted, whereby automated tasks are run against
 ---
 
 ## Additional Resources
-https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html
-https://www.lucidchart.com/blog/aws-tagging-best-practices
-https://confluence.huit.harvard.edu/display/CLA/Cloud+Resource+Tagging
-https://www.cloudzero.com/blog/aws-tagging-strategy
-https://www.cloudforecast.io/blog/aws-tagging-best-practices/
-https://www.cloudforecast.io/blog/aws-tagging-best-practices-guide-part-2/?utm_source=blog&utm_medium=crosspostlink&utm_campaign=tagging_part1
+[AWS - Tagging AWS resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html)
+
+[Lucidchart - AWS tagging best practices](https://www.lucidchart.com/blog/aws-tagging-best-practices)
+
+[Harvard - AWS Tagging strategies](https://confluence.huit.harvard.edu/display/CLA/Cloud+Resource+Tagging)
+
+[CloudZero - AWS tagging best practices](https://www.cloudzero.com/blog/aws-tagging-strategy)
+
+[Cloudforecast - AWS Tags Best Practices and Strategies](https://www.cloudforecast.io/blog/aws-tagging-best-practices/)
+
+[Terraform vs AWS CloudFormation for AWS Tags](https://www.cloudforecast.io/blog/aws-tagging-best-practices-guide-part-2/?utm_source=blog&utm_medium=crosspostlink&utm_campaign=tagging_part1)
