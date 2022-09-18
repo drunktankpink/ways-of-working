@@ -39,6 +39,7 @@ plugins:
   - search
 
 markdown_extensions:
+  - tables
   - meta
   - admonition
   - pymdownx.highlight
