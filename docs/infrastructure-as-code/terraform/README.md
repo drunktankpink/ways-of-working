@@ -7,7 +7,7 @@ If you see unfamiliar terms, such as [Root module](https://www.terraform.io/docs
 
 ---
 
-Hashicorp (company behind Terraform Project) do not point to specific patterns and best practices in their documentation.
+HashiCorp (company behind Terraform Project) do not point to specific patterns and best practices in their documentation.
 There is possibility where you can store whole code in single `.tf` file, however this is highly discouraged, as navigation in thousands lines of code is usually hard.
 For small Terraform code and [modules](modules), we can observe established pattern, where the code containing resource definitions is put on `main.tf` file, with  variables and outputs separated into `variables.tf` and `outputs.tf` files.
 
@@ -20,7 +20,7 @@ For small Terraform code and [modules](modules), we can observe established patt
 ├── outputs.tf
 ```
 
-As Terraform configuration usually includes `terraform{}` block (ie. for adding required providers and for pinning them to particular version), this is often split from `main.tf` and put into `terraform.tf` for better readability.
+As Terraform configuration usually includes `terraform{}` block (i.e. for adding required providers and for pinning them to particular version), this is often split from `main.tf` and put into `terraform.tf` for better readability.
 
 Whenever you write Terraform code don't assume it's self explanatory. Different people applies different thinking. Comment your code whenever you feel it might need few words of explanation.
 
@@ -35,4 +35,4 @@ It's also helpful when you work with multiple environments within same project, 
 
 ## AWS Resources
 
-Part of AWS resources that will be required for sucessfull build of infrastructure may require resources, which could be `regional` or `global`. While writing IaC in modules, you can distinguish which part of is not region locked (i.e IAM roles, policies, etc), and which is (i.e EC2 instances, S3 buckets, etc).
+Part of AWS resources that will be required for successful build of infrastructure may require resources, which could be `regional` or `global`. While writing IaC in modules, you can distinguish which part of is not region locked (i.e IAM roles, policies, etc), and which is (i.e EC2 instances, S3 buckets, etc).

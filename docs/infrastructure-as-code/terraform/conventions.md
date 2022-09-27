@@ -23,8 +23,8 @@
         ```resource "aws_route_table" "public_aws_route_table" {}```
 
 2. Resources should be called `this` if there is not more descriptive and general name available, or if the resource module creates a single resource of this type. <br>
-   eg. in an [AWS VPC Module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/3.14.0) there is a single resource of type `aws_nat_gateway`, and multiple resources of type `aws_route_table`. Therefore `aws_nat_gateway` should be named `this` and each `aws_route_table` should have more descriptive names such as `private`, `public` or `database`.
-3. Use singluar nounds for names.
+   e.g. in an [AWS VPC Module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/3.14.0) there is a single resource of type `aws_nat_gateway`, and multiple resources of type `aws_route_table`. Therefore `aws_nat_gateway` should be named `this` and each `aws_route_table` should have more descriptive names such as `private`, `public` or `database`.
+3. Use singular nouns for names.
 4. Use `-` inside argument values and in places where the value will be exposed to a human
 5. Any `count` / `for_each` arguments inside a resource or data block should be defined as the first argument and separated by a newline after it.
 6. Always favour `for_each` over `count`
