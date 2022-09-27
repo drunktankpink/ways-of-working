@@ -5,4 +5,4 @@ All modules or deployments of Terraform should contain documentation that explai
 ## Terraform-docs
 
 [Terraform-docs](https://terraform-docs.io/user-guide/introduction/) is a utility which can be used to automate the generation of documentation files for each terraform deployment.<br>
-The website contains a guide on how to [install](https://terraform-docs.io/user-guide/installation/), as well as how to use the utility via cli, github actions or via pre-commit hook.
+The website contains a guide on how to [install](https://terraform-docs.io/user-guide/installation/), as well as how to use the utility via CLI, GitHub actions or via pre-commit hook.

@@ -47,7 +47,7 @@ policies:
   - name: ec2-tag-compliance-stop
     resource: ec2
     comment: |
-      Stop all non-asg instances previously marked for stoppage by todays date, and schedule for termination in 2 days. Verify they are still non-conformant to tagging policies.
+      Stop all non-asg instances previously marked for stoppage by today's date, and schedule for termination in 2 days. Verify they are still non-conformant to tagging policies.
     filters:
       - "tag:aws:autoscaling:groupname": absent
       - type: marked-for-op
