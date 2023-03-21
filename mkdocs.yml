@@ -1,5 +1,5 @@
 site_name: Ways of Working
-#site_url: https://waysofworking.nevinia.co.uk
+#site_url: https://wow.nevinia.co.uk
 site_description: Platform Engineering - Best practices, standards, policies & procedures
 site_author: Declan Griffith-Barwell
 
@@ -13,21 +13,21 @@ theme:
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
-        name: Switch to light mode
+        name: Switch to dark mode
       primary: pink
     # Palette toggle for light mode
     - media: "(prefers-colour-scheme: light)"
       scheme: default
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Switch to system preference
       primary: pink
     # Palette toggle for dark mode
     - media: "(prefers-colour-scheme: dark)"
       scheme: slate
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
+        name: Switch to light mode
       primary: pink
   logo: img/dtp-crop-circle.png
   favicon: img/favicon-16x16.png
