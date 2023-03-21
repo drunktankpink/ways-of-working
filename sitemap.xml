@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/AWS/aws-naming-convention/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/AWS/resource-tagging/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/AWS/Cloud-Custodian/policies/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/infrastructure-as-code/terraform/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/infrastructure-as-code/terraform/conventions/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/infrastructure-as-code/terraform/documentation/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/infrastructure-as-code/terraform/installation/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/infrastructure-as-code/terraform/modules/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/infrastructure-as-code/terraform/variables-and-outputs/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
+         <loc>https://wow.nevinia.co.uk/misc/readme-best-practice/</loc>
          <lastmod>2023-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
